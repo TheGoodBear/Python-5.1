@@ -58,7 +58,7 @@ class Maze:
                             CurrentElement = MazeElement.GetElement(cls, Symbol=Character)
                             if(CurrentElement != None):
                                 # If an element was found, append element's image
-                                LineCharacters.append(CurrentElement["Image"])
+                                LineCharacters.append(CurrentElement.Image)
                             else:
                                 # If no element was found append character
                                 LineCharacters.append(Character)
@@ -80,17 +80,17 @@ class Maze:
 
         # Browse every maze element
         for CurrentObject in cls.Elements:
-            if("Pick" in CurrentObject["Behavior"]):
+            if("Pick" in CurrentObject.Behavior):
                 # the current object is pickable
                 # draw random coordinates in maze limits
                 ObjectX: int = random.randint(0, len(cls.Map)-1)
                 ObjectY: int = random.randint(0, len(cls.Map[0])-1)
-                while(cls.Map[ObjectY][ObjectX] != MazeElement.GetElement(cls, "Sol")["Image"]):
+                while(cls.Map[ObjectY][ObjectX] != MazeElement.GetElement(cls, "Sol").Image):
                     # do it again until random position is ground
                     ObjectX = random.randint(0, len(cls.Map)-1)
                     ObjectY = random.randint(0, len(cls.Map[0])-1)
                 # place current object at this position (replace the ground with it)
-                cls.Map[ObjectY][ObjectX] = CurrentObject["Image"]
+                cls.Map[ObjectY][ObjectX] = CurrentObject.Image
 
 
     @classmethod

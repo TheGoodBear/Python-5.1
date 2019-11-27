@@ -72,7 +72,7 @@ class Player:
                 X = 0
                 for Character in Line:
                     # If position contains entrance (E)
-                    if (Maze.Map[Y][X] == MazeElement.GetElement(Maze, "Entrée")["Image"]):
+                    if (Maze.Map[Y][X] == MazeElement.GetElement(Maze, "Entrée").Image):
                         # Save coordinates for player
                         cls.X = X
                         cls.Y = Y
@@ -88,7 +88,7 @@ class Player:
         else:
             # Player is already in maze
             # replace actual player position with a floor
-            Maze.Map[cls.Y][cls.X] = MazeElement.GetElement(Maze, "Sol")["Image"]
+            Maze.Map[cls.Y][cls.X] = MazeElement.GetElement(Maze, "Sol").Image
             # and place player to new position
             Maze.Map[PlayerNewY][PlayerNewX] = cls.Image
 
@@ -183,14 +183,14 @@ class Player:
         CurrentElement = MazeElement.GetElement(Maze,Image=Maze.Map[PlayerNewY][PlayerNewX])
 
         # Check current element behavior or name
-        if (CurrentElement["Name"] == "Sortie"):
+        if (CurrentElement.Name == "Sortie"):
             # if exit is reached
             # check if player has all needed objects
             MissingObjects: int = 0
             # for each element in maze
             for Element in Maze.Elements:
-                if ("Combine" in Element["Behavior"]
-                    and not Element["Name"] in cls.Backpack):
+                if ("Combine" in Element.Behavior
+                    and not Element.Name in cls.Backpack):
                     # this element can be combined but is not in player backpack
                     MissingObjects += 1
             if (MissingObjects == 0):
@@ -215,21 +215,21 @@ class Player:
                     "\nHa, tu as bien trouvé la sortie mais il te manque encore {0} objet(s) pour ouvrir la porte..."
                     .format(MissingObjects))
         
-        elif ("Block" in CurrentElement["Behavior"]):
+        elif ("Block" in CurrentElement.Behavior):
             # if there is an obstacle, say it
             print("Oups un mur, tu ne peux pas bouger !")
             # and redraw maze
             Maze.DrawOnScreen()
         
-        elif ("Pick" in CurrentElement["Behavior"]):
+        elif ("Pick" in CurrentElement.Behavior):
             # if there is an object, put it in backpack
-            cls.Backpack.append(CurrentElement["Name"])
+            cls.Backpack.append(CurrentElement.Name)
             # say it
             print(
                 "Chouette, tu as trouvé un(e) {0}\n"
-                .format(CurrentElement["Name"]))
+                .format(CurrentElement.Name))
             # remove it from maze (put floor at its place)
-            Maze.Map[PlayerNewY][PlayerNewX] = MazeElement.GetElement(Maze,"Sol")["Image"]
+            Maze.Map[PlayerNewY][PlayerNewX] = MazeElement.GetElement(Maze,"Sol").Image
             # replace player in maze
             cls.PlaceInMaze(Maze,PlayerNewX,PlayerNewY)
             # assign new coordinates to player

@@ -3,8 +3,7 @@ Contexte
 
 Améliorer le petit jeu de labyrinthe :
 
-1) Passer l'application en POO
-2) Ajouter un dossier Models pour placer les classes
+1) Désérialiser la liste des éléments du labyrinthe dans la classe MazeElements
 
 Consignes :
 - Tous les nommages (méthodes, propriétés, variables, classes, etc.) doivent être en anglais

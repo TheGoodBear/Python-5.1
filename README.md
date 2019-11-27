@@ -1,24 +1,21 @@
-# Formation Python étape 5
+# Formation Python étape 5.1
 
-    Jeu du labyrinthe V1.2
+    Jeu du labyrinthe V1.21
 
     Notions abordées :
 
-    - Spécifications : 
-        - Diagramme de classes
+    - Spécifications : NA
 
-    - IDE : 
-        - Block selection (Alt + middle mouse button)
+    - IDE : NA
 
     - Architecture logicielle :
         - Programmation Orientée Objet
-        - Classe, Instance, Propriété, Méthode (de classe, statique et d'instance), Constructeur
+        - Instance de classe
 
-    - Données : NA
+    - Données : 
+        - Désérialisation JSON dans une classe
 
-    - Langage :
-        - import (from syntax)
-        - POO (class, __init__, @staticmethod, @classmethod, @property)
+    - Langage : NA
 
 # Énoncé du sujet
 

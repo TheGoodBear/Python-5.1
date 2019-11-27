@@ -5,8 +5,19 @@ class MazeElement:
     """
         Used to manage elements compozing the maze
 
-        Not instanciable
+        Instanciable
     """
+
+
+    def __init__(self, Element):
+        """
+            Constructor
+
+        """
+        self.Name: str = Element["Name"]
+        self.Symbol: str = Element["Symbol"]
+        self.Image: str = Element["Image"]
+        self.Behavior: list() = Element["Behavior"]
 
 
     @staticmethod
@@ -20,8 +31,10 @@ class MazeElement:
             # Open JSON file in read mode (and automatically close it when finished)
             with open(Maze.FilePath + Maze.FileName + " Elements.json", "r", encoding='utf-8') as MyFile:
                 # Load them into maze elements list of dictionary
-                Maze.Elements = json.load(MyFile)
-                #print(MazeElements)
+                TempElements = json.load(MyFile)
+                # Transforms list of dictionary into list of MazeElements
+                for TempElement in TempElements:
+                    Maze.Elements.append(MazeElement(TempElement))
 
             # # Code sample to write to JSON file
             # # Open JSON file in write mode (and automatically close it when finished)
@@ -41,7 +54,7 @@ class MazeElement:
         Maze,
         Name: str = "",
         Symbol: str = "",
-        Image: str = "") -> {}:
+        Image: str = ""):
         """ 
             Return a maze element by its name, symbol or image or None if none matches
 
@@ -55,7 +68,7 @@ class MazeElement:
             :type arg4: string
 
             :return: The element (dictionary of all its properties)
-            :rtype: dictionary
+            :rtype: MazeElement
         """
 
         # # Alternative syntax with list comprehension
@@ -63,11 +76,11 @@ class MazeElement:
 
         # Browse all elements to find the matching one
         for CurrentElement in Maze.Elements:
-            if(Name != "" and CurrentElement["Name"] == Name):
+            if(Name != "" and CurrentElement.Name == Name):
                 return CurrentElement
-            elif(Symbol != "" and CurrentElement["Symbol"] == Symbol):
+            elif(Symbol != "" and CurrentElement.Symbol == Symbol):
                 return CurrentElement
-            elif(Image != "" and CurrentElement["Image"] == Image):
+            elif(Image != "" and CurrentElement.Image == Image):
                 return CurrentElement
 
         # If no element matches, return none (null/nothing)

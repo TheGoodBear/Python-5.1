@@ -1,4 +1,4 @@
-# Maze v1.2
+# Maze v1.21
 # POO
 
 # Modules importation
