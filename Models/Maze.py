@@ -33,6 +33,14 @@ class Maze:
         cls.FilePath = FilePath
         cls.FileName = FileName
 
+        # Load maze elements from json file
+        MazeElement.LoadElementsFromFile(Maze)
+        # Load maze from text file
+        Maze.LoadMapFromFile()
+
+        # Put objects at random positions
+        Maze.PlaceObjectsAtRandomPositions()
+
 
     @classmethod
     def LoadMapFromFile(cls):

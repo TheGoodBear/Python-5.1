@@ -4,6 +4,7 @@ Contexte
 Améliorer le petit jeu de labyrinthe :
 
 1) Désérialiser la liste des éléments du labyrinthe dans la classe MazeElements
+2) Retirer tout le code de Main.py
 
 Consignes :
 - Tous les nommages (méthodes, propriétés, variables, classes, etc.) doivent être en anglais

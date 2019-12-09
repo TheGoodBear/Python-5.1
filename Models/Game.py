@@ -9,6 +9,8 @@ class Game:
         Static methods only
     """
 
+    def xxx(self):
+        pass
 
     @staticmethod
     def ApplicationStart():
@@ -16,7 +18,33 @@ class Game:
             Initialize application and show initial message
         """
 
+        # 1) Interact with player
+
         print("\nBonjour humain, merci de t'identifier afin que je puisse interagir avec toi.")
+        # Ask for player data
+        PlayerName = Player.GetPlayerData()
+
+        # 2) Initialize data
+
+        # Initialize maze
+        Maze.Initialize()
+        # Place player in maze
+        Player.PlaceInMaze(Maze)
+        # Draw maze on screen
+        Maze.DrawOnScreen()
+        # Start game
+        Game.StartGame(Maze)
+
+        # 3) Game loop
+
+        # Variable for end of game
+        EndOfGame: bool = False
+        # Do this until end of game is triggered
+        while not EndOfGame:
+            # Wait for a player action
+            PlayerAction: str = Player.WaitForAction()
+            # Do action
+            EndOfGame = Player.ExecuteAction(PlayerAction)
 
 
     @staticmethod
