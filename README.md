@@ -4,7 +4,8 @@
 
     Notions abordées :
 
-    - Spécifications : NA
+    - Spécifications : 
+        - Sous-diagrammes/Processus (diagramme de flux)
 
     - IDE : NA
 

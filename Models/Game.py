@@ -9,8 +9,6 @@ class Game:
         Static methods only
     """
 
-    def xxx(self):
-        pass
 
     @staticmethod
     def ApplicationStart():
