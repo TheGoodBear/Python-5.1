@@ -11,7 +11,7 @@ class Game:
 
 
     @staticmethod
-    def ApplicationStart():
+    def StartApplication():
         """ 
             Initialize application and show initial message
         """

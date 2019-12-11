@@ -13,6 +13,8 @@ class MazeElement:
         """
             Constructor
 
+            :param arg1: The element
+            :type arg1: Element
         """
         self.Name: str = Element["Name"]
         self.Symbol: str = Element["Symbol"]
@@ -24,6 +26,9 @@ class MazeElement:
     def LoadElementsFromFile(Maze):
         """ 
             Load maze elements from json file and store them into list of dictionaries
+
+            :param arg1: The maze
+            :type arg1: Maze
         """
 
         # try/exception block to trap errors
@@ -66,9 +71,6 @@ class MazeElement:
             :type arg3: string
             :param arg4: The element image
             :type arg4: string
-
-            :return: The element (dictionary of all its properties)
-            :rtype: MazeElement
         """
 
         # # Alternative syntax with list comprehension

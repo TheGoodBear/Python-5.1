@@ -9,4 +9,4 @@ from Models.Game import *
 # -----------
 
 # Application start
-Game.ApplicationStart()
+Game.StartApplication()
