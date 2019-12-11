@@ -5,7 +5,8 @@
     Notions abordées :
 
     - Spécifications : 
-        - Sous-diagrammes/Processus (diagramme de flux)
+        - Diagramme de flux (sous-diagrammes/processus)
+        - Diagramme de classes (relations)
 
     - IDE : NA
 
